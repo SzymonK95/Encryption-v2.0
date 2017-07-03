@@ -1,0 +1,13 @@
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\bin\Debug\HideIt.exe.config
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\bin\Debug\HideIt.exe
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\bin\Debug\HideIt.pdb
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\HideIt.csprojResolveAssemblyReference.cache
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\MainWindow.baml
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\MainWindow.g.cs
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\App.g.cs
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\HideIt_MarkupCompile.cache
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\HideIt.g.resources
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\HideIt.Properties.Resources.resources
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\HideIt.csproj.GenerateResource.Cache
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\HideIt.exe
+d:\users\szymon\documents\visual studio 2013\Projects\HideIt\HideIt\obj\Debug\HideIt.pdb
