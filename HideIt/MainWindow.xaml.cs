@@ -24,5 +24,11 @@ namespace HideIt
         {
             InitializeComponent();
         }
+
+
+        private void ButtonBasePicture_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
