@@ -6,32 +6,35 @@
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="540*" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <TabControl Grid.Row="0" >
             <TabItem Header="Opcje podstawowe" FontSize="14">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
+                        <RowDefinition Height="50" />
                         <RowDefinition Height="100*" />
-                        <RowDefinition Height="40" />
+                        <RowDefinition Height="50" />
                         <RowDefinition Height="100*" />
                     </Grid.RowDefinitions>
+
                     <Grid Grid.Row="0">
                         <!--Load Base Image-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="200*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" x:Name="ButtonBasePicture" Content="Wczytaj obraz bazowy" Margin="5" FontSize="14" Click="ButtonBasePicture_Click" />
-                        <Label Grid.Column="1" x:Name="filePathBase" Content="Ścieżka pliku: " Margin="5" FontSize="14"></Label>
+                        <Button Grid.Column="0" x:Name="ButtonBasePicture" Content="Wczytaj obraz bazowy" Margin="5" FontSize="14" MouseEnter="ButtonBasePicture_MouseEnter" MouseLeave="ButtonBasePicture_MouseLeave" Click="ButtonBasePicture_Click" />
+                        <Label Grid.Column="1" x:Name="filePathBase" Content="Ścieżka pliku: " Margin="5" FontSize="14" ></Label>
                     </Grid>
-                    <Grid Grid.Row="1"> 
+
+                    <Grid Grid.Row="1">
                         <!--Base Image Place-->
-                        <Image x:Name="ImageBase"></Image>
+                        <Image x:Name="ImageBase" Margin="5"/>
                     </Grid>
-                    <Grid Grid.Row="2"> 
+
+                    <Grid Grid.Row="2">
                         <!--Load Message-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200"/>
@@ -40,49 +43,74 @@
                         <Button Grid.Column="0" Content="Wczytaj wiadomość tekstową" Margin="5" FontSize="14"></Button>
                         <Label Grid.Column="1" x:Name="filePathMessage" Content="Ścieżka pliku: " Margin="5" FontSize="14"></Label>
                     </Grid>
-                    <Grid Grid.Row="3"> 
+
+                    <Grid Grid.Row="3">
                         <!--Messsage Place-->
-                        <TextBox x:Name="TextBoxMessage"></TextBox>
+                        <TextBox x:Name="TextBoxMessage" Margin="5"/>
                     </Grid>
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Steganografia" FontSize="14">
-                                <Grid Background="#FFFFFFFF">
+                <Grid Background="#FFFFFFFF">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
-                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="400*"/>
                     </Grid.RowDefinitions>
+
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="200*" />
                         </Grid.ColumnDefinitions>
                         <ComboBox x:Name="comboBoxPictureParam" Margin="5"></ComboBox>
                     </Grid>
-                    <Grid x:Name="gridPictureParamForComboBox"/>
+
+                    <Grid Grid.Row="1" x:Name="gridPictureParamForComboBox"/>
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Kryptografia" FontSize="14">
                 <Grid Background="#FFFFFFFF">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
-                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="400*"/>
                     </Grid.RowDefinitions>
+
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="200*" />
                         </Grid.ColumnDefinitions>
-                        <ComboBox x:Name="comboBoxEncoding" Margin="5"></ComboBox>
+                        
+                        <ComboBox Grid.Column="0"  x:Name="comboBoxEncoding" Margin="5"></ComboBox>
+                        
+                        <Grid Grid.Column="1">
+                            
+                        </Grid>
                     </Grid>
-                    <Grid x:Name="gridEncodingParamForComboBox"/>
+
+                    <Grid x:Name="gridEncodingParamForComboBox"/>                           
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Procesy" FontSize="14">
-                <Grid Background="#FFFFFFFF"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="400*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+
+                    </Grid>
+                </Grid>
             </TabItem>
-            
+
         </TabControl>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -90,9 +118,9 @@
                 <ColumnDefinition Width="200*"/>
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" x:Name="buttonDecryption" Content="buttonDecryption" Margin="5" FontSize="14"/>
-            <TextBlock Grid.Column="1" Text="text po najechaniu mysza np. na przycisk"  TextAlignment="Center" Margin="5" FontSize="14" IsEnabled="False"/>
-            <Button Grid.Column="2" x:Name="buttonEncrypt" Content="buttonEncrypt" Margin="5" FontSize="14"/>
+            <Button Grid.Column="0" x:Name="buttonDecryption" Content="Decryption" Margin="5" FontSize="14" MouseEnter="buttonDecryption_MouseEnter" MouseLeave="buttonDecryption_MouseLeave"/>
+            <TextBlock Grid.Column="1" x:Name="textBlockInfo" TextAlignment="Center" Margin="5" FontSize="14" IsEnabled="False" TextWrapping="WrapWithOverflow"/>
+            <Button Grid.Column="2" x:Name="buttonEncrypt" Content="Encrypt" Margin="5" FontSize="14" MouseEnter="buttonEncrypt_MouseEnter" MouseLeave="buttonEncrypt_MouseLeave"/>
         </Grid>
     </Grid>
 </Window>
