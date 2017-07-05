@@ -104,7 +104,7 @@ namespace HideIt
         private void ButtonFileMessage_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Txt images (*.txt)|*.txt";
+            openFileDialog.Filter = "Txt files (*.txt)|*.txt";
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             if (openFileDialog.ShowDialog() == true)
             {
