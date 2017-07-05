@@ -25,7 +25,7 @@
                             <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="200*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" x:Name="ButtonBasePicture" Content="Wczytaj obraz bazowy" Margin="5" FontSize="14" MouseEnter="ButtonBasePicture_MouseEnter" MouseLeave="ButtonBasePicture_MouseLeave" Click="ButtonBasePicture_Click" />
+                        <Button Grid.Column="0" x:Name="ButtonBasePicture" Content="Wczytaj obraz bazowy" Margin="5" FontSize="14" MouseEnter="ButtonBasePicture_MouseEnter" MouseLeave="ButtonBasePicture_MouseLeave" Click="ButtonBasePicture_Click" MouseRightButtonUp="ButtonBasePicture_MouseRightButtonUp" />
                         <Label Grid.Column="1" x:Name="FilePathBase" Content="Ścieżka pliku: " Margin="5" FontSize="14" ></Label>
                     </Grid>
 
@@ -47,8 +47,8 @@
                             <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="200*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="ButtonFileMessage" Grid.Column="0" Content="Wczytaj wiadomość tekstową" Margin="5" FontSize="14" MouseEnter="ButtonFileMessage_MouseEnter" MouseLeave="ButtonFileMessage_MouseLeave" Click="ButtonFileMessage_Click"></Button>
-                        <Label Grid.Column="1" x:Name="LabelFileMessage" Content="Ścieżka pliku: " Margin="5" FontSize="14"></Label>
+                        <Button x:Name="ButtonFileMessage" Grid.Column="0" Content="Wczytaj wiadomość tekstową" Margin="5" FontSize="14" MouseEnter="ButtonFileMessage_MouseEnter" MouseLeave="ButtonFileMessage_MouseLeave" Click="ButtonFileMessage_Click" MouseRightButtonUp="ButtonFileMessage_MouseRightButtonUp"></Button>
+                        <Label Grid.Column="1" x:Name="LabelFilePathMessage" Content="Ścieżka pliku: " Margin="5" FontSize="14"></Label>
                     </Grid>
 
                     <Grid Grid.Row="3">
@@ -57,7 +57,7 @@
                             <ColumnDefinition Width="200*"/>
                             <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0" x:Name="TextBoxMessage" Margin="5"/>
+                        <TextBox Grid.Column="0" x:Name="TextBoxMessage" Margin="5" TextWrapping="WrapWithOverflow" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
                         <Label Grid.Column="1" x:Name="LabelFileMessageParam" Margin="5" FontSize="14"></Label>
                     </Grid>
@@ -67,7 +67,7 @@
             <TabItem Header="Steganografia" FontSize="14">
                 <Grid Background="#FFFFFFFF">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="400*"/>
                     </Grid.RowDefinitions>
 
@@ -76,7 +76,7 @@
                             <ColumnDefinition Width="200" />
                             <ColumnDefinition Width="200*" />
                         </Grid.ColumnDefinitions>
-                        <ComboBox x:Name="ComboBoxPictureParam" Margin="5"></ComboBox>
+                        <ComboBox x:Name="ComboBoxEncrypt" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></ComboBox>
                     </Grid>
 
                     <Grid Grid.Row="1" x:Name="GridPictureParamForComboBox"/>
@@ -86,7 +86,7 @@
             <TabItem Header="Kryptografia" FontSize="14">
                 <Grid Background="#FFFFFFFF">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="400*"/>
                     </Grid.RowDefinitions>
 
@@ -95,8 +95,8 @@
                             <ColumnDefinition Width="200" />
                             <ColumnDefinition Width="200*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <ComboBox Grid.Column="0"  x:Name="ComboBoxEncoding" Margin="5"></ComboBox>
+
+                        <ComboBox Grid.Column="0"  x:Name="ComboBoxImageParam" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></ComboBox>
                         
                         <Grid Grid.Column="1">
                             
@@ -110,7 +110,7 @@
             <TabItem Header="Procesy" FontSize="14">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="400*"/>
                     </Grid.RowDefinitions>
 
@@ -131,9 +131,11 @@
                 <ColumnDefinition Width="200*"/>
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" x:Name="ButtonDecryption" Content="Decryption" Margin="5" FontSize="14" MouseEnter="ButtonDecryption_MouseEnter" MouseLeave="ButtonDecryption_MouseLeave"/>
-            <TextBlock Grid.Column="1" x:Name="TextBlockInfo" TextAlignment="Center" Margin="5" FontSize="14" IsEnabled="False" TextWrapping="WrapWithOverflow"/>
-            <Button Grid.Column="2" x:Name="ButtonEncrypt" Content="Encrypt" Margin="5" FontSize="14" MouseEnter="ButtonEncrypt_MouseEnter" MouseLeave="ButtonEncrypt_MouseLeave"/>
+            <Button Grid.Column="0" x:Name="ButtonDecryption" Content="Decryption" Margin="5" FontSize="14" MouseEnter="ButtonDecryption_MouseEnter" MouseLeave="ButtonDecryption_MouseLeave" MouseRightButtonUp="ButtonDecryption_MouseRightButtonUp" Click="ButtonDecryption_Click"/>
+
+            <TextBox Grid.Column="1" x:Name="TextBoxInfo" TextAlignment="Center" Margin="5" FontSize="14" IsReadOnly="True"  TextWrapping="WrapWithOverflow" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            
+            <Button Grid.Column="2" x:Name="ButtonEncrypt" Content="Encrypt" Margin="5" FontSize="14" MouseEnter="ButtonEncrypt_MouseEnter" MouseLeave="ButtonEncrypt_MouseLeave" Click="ButtonEncrypt_Click" MouseRightButtonUp="ButtonEncrypt_MouseRightButtonUp"/>
         </Grid>
     </Grid>
 </Window>
