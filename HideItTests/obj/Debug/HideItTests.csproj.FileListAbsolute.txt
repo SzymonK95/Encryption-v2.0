@@ -1,0 +1,7 @@
+D:\HideIt\HideItTests\bin\Debug\HideItTests.dll
+D:\HideIt\HideItTests\bin\Debug\HideItTests.pdb
+D:\HideIt\HideItTests\bin\Debug\HideIt.exe
+D:\HideIt\HideItTests\bin\Debug\HideIt.pdb
+D:\HideIt\HideItTests\obj\Debug\HideItTests.csprojResolveAssemblyReference.cache
+D:\HideIt\HideItTests\obj\Debug\HideItTests.dll
+D:\HideIt\HideItTests\obj\Debug\HideItTests.pdb
