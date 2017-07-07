@@ -5,3 +5,10 @@ D:\HideIt\HideItTests\bin\Debug\HideIt.pdb
 D:\HideIt\HideItTests\obj\Debug\HideItTests.csprojResolveAssemblyReference.cache
 D:\HideIt\HideItTests\obj\Debug\HideItTests.dll
 D:\HideIt\HideItTests\obj\Debug\HideItTests.pdb
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideItTests\obj\Debug\HideItTests.csprojResolveAssemblyReference.cache
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideItTests\obj\Debug\HideItTests.dll
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideItTests\bin\Debug\HideItTests.dll
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideItTests\bin\Debug\HideItTests.pdb
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideItTests\bin\Debug\HideIt.exe
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideItTests\bin\Debug\HideIt.pdb
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideItTests\obj\Debug\HideItTests.pdb

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 using HideIt.Model;
 
 namespace HideIt
@@ -129,14 +130,25 @@ namespace HideIt
 
         private void ButtonEncrypt_Click(object sender, RoutedEventArgs e)
         {
-            EncryptObject eo = new EncryptObject(TextBoxMessage.Text, ImageBase);
-            setInfo(eo.Result);
             //TODO walidacja
             //TODO szyfrowanie wiadomosci jezeli zaznaczone
             //TODO ustalenie parametrow steganograficznych
             //TODO wpisanie informacji w obraz w osobnym watku
             //TODO dodanie procesu ukrywania do zakladni procesy
             //TODO Messageboxy albo Info 
+            switch(ComboBoxEncrypt.SelectedItem.ToString())
+            {
+                case "Szyfr Cezara":
+                    //MessageBox.Show("wybrano cezara");
+                    EncryptDecrypt ed = new Caesar(5);
+                    setInfo(ed.EncryptAlgorithm(TextBoxMessage.Text.ToString()));
+                    
+                    break;
+                default:
+                    //MessageBox.Show("Wybrano bez szyfrowania");
+                    //bez szyfrowania
+                    break;
+            }
         }
 
         #endregion Buttons.Encrypt
@@ -194,7 +206,7 @@ namespace HideIt
             }
             catch (Exception e)
             {
-                setInfo("Błąd: " + e.Message);
+                setError(e.Message);
             }
         }
 
@@ -216,7 +228,7 @@ namespace HideIt
             }
             catch (Exception e)
             {
-                setInfo("Błąd: " + e.Message);
+                setError(e.Message);
             }
         }
 
@@ -225,9 +237,17 @@ namespace HideIt
             TextBoxInfo.Text = info;
         }
 
+        private void setError(String errorMessage)
+        {
+            TextBoxInfo.Text = "Błąd: " + errorMessage;
+        }
+
         #endregion SetInformations
 
         #region ComboBoxs
+
+        #region ComboBoxs.Encrypt
+
         private void ComboBoxEncrypt_MouseEnter(object sender, MouseEventArgs e)
         {
 
@@ -243,11 +263,157 @@ namespace HideIt
 
         }
 
-        private void ComboBoxEncrypt_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void ComboBoxEncrypt_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            InitGridEncryptParamForComboBox();
         }
+        #endregion ComboBoxs.Encrypt
 
         #endregion ComboBoxs
+
+        #region Inits
+
+        #region Inits.GridEncryptParamForComboBox
+
+        public bool InitGridEncryptParamForComboBox()
+        {
+            try
+            {
+                switch (ComboBoxEncrypt.SelectedItem.ToString())
+                {
+                    case "Szyfr Cezara":
+                        InitCaesar();
+                        break;
+                    default:
+                        //MessageBox.Show("Wybrano bez szyfrowania");
+                        GridEncryptParamForComboBox.Children.Clear();
+                        Label l = new Label();
+                        l.Content = "Nie wybrano żadnego trybu szyfrowania";
+                        GridEncryptParamForComboBox.Children.Add(l);
+
+                        //bez szyfrowania
+                        break;
+                }
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                setError(e.Message);
+                return false; //something going wrong
+            }
+            
+        }
+
+
+
+        #endregion Inits.GridEncryptParamForComboBox
+
+        #region Inits.InitCaesar
+
+        private bool InitCaesar()
+        {
+            try
+            {
+                GridEncryptParamForComboBox.Children.Clear();
+
+                #region mainGrid
+
+                Grid mainGrid = new Grid();
+
+                ColumnDefinition cd1 = new ColumnDefinition();
+                ColumnDefinition cd2 = new ColumnDefinition();
+                ColumnDefinition cd3 = new ColumnDefinition();
+                cd1.Width = new GridLength(200, GridUnitType.Pixel);
+                cd2.Width = new GridLength(200, GridUnitType.Pixel);
+                cd3.Width = new GridLength(300, GridUnitType.Star);
+
+                RowDefinition rd1 = new RowDefinition();
+                RowDefinition rd2 = new RowDefinition();
+                rd1.Height = new GridLength(50, GridUnitType.Pixel);
+                rd2.Height = new GridLength(500, GridUnitType.Star);
+
+                mainGrid.ColumnDefinitions.Add(cd1);
+                mainGrid.ColumnDefinitions.Add(cd2);
+
+                mainGrid.RowDefinitions.Add(rd1);
+                mainGrid.RowDefinitions.Add(rd2);
+
+                #endregion mainGrid
+
+                #region Items
+
+                #region Items.labelKeyValueCaesar
+
+                Label labelKeyValueCaesar = new Label();
+                labelKeyValueCaesar.Content = "Wartość klucza: ";
+                labelKeyValueCaesar.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
+                labelKeyValueCaesar.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Right;
+                labelKeyValueCaesar.VerticalContentAlignment = System.Windows.VerticalAlignment.Center;
+                Grid.SetRow(labelKeyValueCaesar, 0);
+                Grid.SetColumn(labelKeyValueCaesar, 0);
+                mainGrid.Children.Add(labelKeyValueCaesar);
+
+                #endregion Items.labelKeyValueCaesar
+
+                #region Items.updownKeyValueCaesar
+
+                IntegerUpDown updownKeyValueCaesar = new IntegerUpDown();
+                updownKeyValueCaesar.Margin = new Thickness(5);
+                updownKeyValueCaesar.Text = "5";
+                updownKeyValueCaesar.FormatString = "N0";
+                updownKeyValueCaesar.Watermark = "Enter Integer";
+                updownKeyValueCaesar.Maximum = 500;
+                updownKeyValueCaesar.Minimum = -500;
+                updownKeyValueCaesar.MouseEnter += updownKeyValueCaesar_MouseEnter;
+                updownKeyValueCaesar.MouseLeave += updownKeyValueCaesar_MouseLeave;
+                updownKeyValueCaesar.MouseRightButtonUp += updownKeyValueCaesar_MouseRightButtonUp;
+                Grid.SetRow(updownKeyValueCaesar, 0);
+                Grid.SetColumn(updownKeyValueCaesar, 1);
+                mainGrid.Children.Add(updownKeyValueCaesar);
+
+                #endregion Items.updownKeyValueCaesar
+
+                #endregion Items
+
+                GridEncryptParamForComboBox.Children.Add(mainGrid);
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                setError(ex.Message);
+                return false;
+            }
+        }
+
+
+
+        #endregion Inits.InitCaesar
+
+        #endregion Inits
+
+        #region IntegerUpDown
+
+        bool flagupdownKeyValueCaesar;
+
+        private void updownKeyValueCaesar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            setInfo("Kliknij by edytować wartość klucza dla szyfrowania");
+            flagupdownKeyValueCaesar = false;
+        }
+
+        void updownKeyValueCaesar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (flagupdownKeyValueCaesar == false)
+                setInfo();
+        }
+
+        void updownKeyValueCaesar_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            flagupdownKeyValueCaesar = true;
+        }
+
+        #endregion IntegerUpDown
     }
 }

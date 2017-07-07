@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace HideIt.Model
 {
-    public class Caesar : EncryptType
+    public class Caesar : EncryptDecrypt
     {
         private Int32 Key;
 
