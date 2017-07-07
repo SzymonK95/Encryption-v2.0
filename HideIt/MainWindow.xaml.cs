@@ -227,5 +227,27 @@ namespace HideIt
 
         #endregion SetInformations
 
+        #region ComboBoxs
+        private void ComboBoxEncrypt_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void ComboBoxEncrypt_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void ComboBoxEncrypt_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ComboBoxEncrypt_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        #endregion ComboBoxs
     }
 }

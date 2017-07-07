@@ -37,3 +37,16 @@ D:\Users\Szymon\documents\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt_MarkupCo
 D:\Users\Szymon\documents\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.g.resources
 D:\Users\Szymon\documents\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.Properties.Resources.resources
 D:\Users\Szymon\documents\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.csproj.GenerateResource.Cache
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\bin\Debug\HideIt.exe.config
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.exe
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.pdb
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\bin\Debug\HideIt.exe
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\bin\Debug\HideIt.pdb
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.csprojResolveAssemblyReference.cache
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\MainWindow.baml
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\MainWindow.g.cs
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\App.g.cs
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt_MarkupCompile.cache
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.g.resources
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.Properties.Resources.resources
+D:\Users\Szymon\Source\Repos\Encryption-v2.0\HideIt\obj\Debug\HideIt.csproj.GenerateResource.Cache

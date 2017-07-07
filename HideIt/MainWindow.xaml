@@ -23,7 +23,7 @@
                         <!--Load Base Image-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="200*"/>
+                            <ColumnDefinition Width="500*"/>
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="0" x:Name="ButtonBasePicture" Content="Wczytaj obraz bazowy" Margin="5" FontSize="14" MouseEnter="ButtonBasePicture_MouseEnter" MouseLeave="ButtonBasePicture_MouseLeave" Click="ButtonBasePicture_Click" MouseRightButtonUp="ButtonBasePicture_MouseRightButtonUp" />
                         <Label Grid.Column="1" x:Name="FilePathBase" Content="Ścieżka pliku: " Margin="5" FontSize="14" ></Label>
@@ -32,7 +32,7 @@
                     <Grid Grid.Row="1">
                         <!--Base Image Place-->
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200*"/>
+                            <ColumnDefinition Width="500*"/>
                             <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Column="0" x:Name="ImageBase" Margin="5"/>
@@ -45,7 +45,7 @@
                         <!--Load Message-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="200*"/>
+                            <ColumnDefinition Width="500*"/>
                         </Grid.ColumnDefinitions>
                         <Button x:Name="ButtonFileMessage" Grid.Column="0" Content="Wczytaj wiadomość tekstową" Margin="5" FontSize="14" MouseEnter="ButtonFileMessage_MouseEnter" MouseLeave="ButtonFileMessage_MouseLeave" Click="ButtonFileMessage_Click" MouseRightButtonUp="ButtonFileMessage_MouseRightButtonUp"></Button>
                         <Label Grid.Column="1" x:Name="LabelFilePathMessage" Content="Ścieżka pliku: " Margin="5" FontSize="14"></Label>
@@ -54,7 +54,7 @@
                     <Grid Grid.Row="3">
                         <!--Messsage Place-->
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200*"/>
+                            <ColumnDefinition Width="500*"/>
                             <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
                         <TextBox Grid.Column="0" x:Name="TextBoxMessage" Margin="5" TextWrapping="WrapWithOverflow" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
@@ -74,9 +74,9 @@
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200" />
-                            <ColumnDefinition Width="200*" />
+                            <ColumnDefinition Width="500*" />
                         </Grid.ColumnDefinitions>
-                        <ComboBox x:Name="ComboBoxEncrypt" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></ComboBox>
+                        <ComboBox x:Name="ComboBoxEncrypt" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseEnter="ComboBoxEncrypt_MouseEnter" MouseLeave="ComboBoxEncrypt_MouseLeave" MouseRightButtonUp="ComboBoxEncrypt_MouseRightButtonUp" DataContextChanged="ComboBoxEncrypt_DataContextChanged"></ComboBox>
                     </Grid>
 
                     <Grid Grid.Row="1" x:Name="GridPictureParamForComboBox"/>
@@ -93,7 +93,7 @@
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="200" />
-                            <ColumnDefinition Width="200*" />
+                            <ColumnDefinition Width="500*" />
                         </Grid.ColumnDefinitions>
 
                         <ComboBox Grid.Column="0"  x:Name="ComboBoxImageParam" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></ComboBox>
@@ -111,7 +111,7 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="400*"/>
+                        <RowDefinition Height="500*"/>
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
